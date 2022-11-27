@@ -17,7 +17,7 @@ export const MainAppCenter = styled.section`
   align-items: center;
 `;
 export const SecondTemp = styled.h1`
-  font-size: 4rem;
+  font-size: 6rem;
   color: var(--color-second);
   font-weight: 600;
   text-shadow: 0px 17px 16px rgba(0, 0, 0, 0.25);

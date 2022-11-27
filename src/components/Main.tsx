@@ -11,20 +11,26 @@ import {
 } from "../styles/main.style";
 import clockSvg from "../assets/clock.svg";
 import hamSvg from "../assets/ham.svg";
+import { PropsRe } from "../interface/interface";
 
-export default function Main() {
+export default function Main({ setSwitchModal }: PropsRe) {
+  const handleClick = () => {
+    setSwitchModal(true);
+  };
   return (
-    <MainApp>
-      <MainAppCenter>
-        <ButtonSettings>
-          <ButtonSettingsImage src={hamSvg} />
-        </ButtonSettings>
-        <SecondTemp>3600</SecondTemp>
-        <LogoWork>
-          <LogoWorkImage src={clockSvg} />
-          <LogoWorkText>register-work</LogoWorkText>
-        </LogoWork>
-      </MainAppCenter>
-    </MainApp>
+    <>
+      <MainApp>
+        <MainAppCenter>
+          <ButtonSettings onClick={handleClick}>
+            <ButtonSettingsImage src={hamSvg} />
+          </ButtonSettings>
+          <SecondTemp>3600</SecondTemp>
+          <LogoWork>
+            <LogoWorkImage src={clockSvg} />
+            <LogoWorkText>register-work</LogoWorkText>
+          </LogoWork>
+        </MainAppCenter>
+      </MainApp>
+    </>
   );
 }
