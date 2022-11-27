@@ -5,7 +5,7 @@ function App() {
   const [switchModal, setSwitchModal] = useState(false);
   return (
     <React.Fragment>
-      <Main setSwitchModal={setSwitchModal}></Main>
+      <Main setSwitchModal={setSwitchModal} switchModal={switchModal}></Main>
       {switchModal && <Modal></Modal>}
     </React.Fragment>
   );

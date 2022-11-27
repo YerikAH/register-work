@@ -8,14 +8,18 @@ import {
   LogoWorkText,
   ButtonSettings,
   ButtonSettingsImage,
-} from "../styles/main.style";
+} from "../styles/main-styles";
 import clockSvg from "../assets/clock.svg";
 import hamSvg from "../assets/ham.svg";
 import { PropsRe } from "../interface/interface";
 
-export default function Main({ setSwitchModal }: PropsRe) {
+export default function Main({ setSwitchModal, switchModal }: PropsRe) {
   const handleClick = () => {
-    setSwitchModal(true);
+    if (switchModal) {
+      setSwitchModal(false);
+    } else {
+      setSwitchModal(true);
+    }
   };
   return (
     <>

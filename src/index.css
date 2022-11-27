@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700;800;900&display=swap");
 :root {
   --bg-color: #1b1b1b;
+  --bg-modal: #151515;
   --color-second: #434343;
   --white: #ffffff;
+  --blue: #1f6feb;
   --family-font: "Source Code Pro", monospace;
 }
 *,
@@ -12,4 +14,21 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--family-font);
+}
+html {
+  overflow-x: hidden;
+}
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+button,
+input {
+  outline: none;
+  border: none;
+}
+a,
+button {
+  cursor: pointer;
 }

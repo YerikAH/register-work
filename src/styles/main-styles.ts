@@ -29,6 +29,7 @@ export const ButtonSettings = styled.button`
   background: transparent;
   border: none;
   margin: 1rem;
+  z-index: 100;
 `;
 export const ButtonSettingsImage = styled.img``;
 export const LogoWork = styled.div`
@@ -44,4 +45,5 @@ export const LogoWorkImage = styled.img``;
 export const LogoWorkText = styled.p`
   color: var(--white);
   font-size: 0.8rem;
+  margin-top: 1rem;
 `;
