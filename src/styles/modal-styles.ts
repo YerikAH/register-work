@@ -113,7 +113,7 @@ export const BgtButton = styled.button`
   width: 3rem;
   font-weight: 900;
 `;
-export const BgtInput = styled.input`
+export const BgtInput = styled.p`
   width: 5rem;
   background-color: var(--bg-color);
   padding: 0.5rem;

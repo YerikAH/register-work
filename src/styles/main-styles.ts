@@ -45,5 +45,4 @@ export const LogoWorkImage = styled.img``;
 export const LogoWorkText = styled.p`
   color: var(--white);
   font-size: 0.8rem;
-  margin-top: 1rem;
 `;

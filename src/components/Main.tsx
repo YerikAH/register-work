@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useReducer } from "react";
 import {
   MainApp,
   MainAppCenter,
@@ -13,7 +13,10 @@ import clockSvg from "../assets/clock.svg";
 import hamSvg from "../assets/ham.svg";
 import { PropsRe } from "../interface/interface";
 
+import { ChoiceOptions, initialState } from "../reducers/app.reducer";
+
 export default function Main({ setSwitchModal, switchModal }: PropsRe) {
+  const [state, dispatch] = useReducer(ChoiceOptions, initialState);
   const handleClick = () => {
     if (switchModal) {
       setSwitchModal(false);
@@ -21,6 +24,16 @@ export default function Main({ setSwitchModal, switchModal }: PropsRe) {
       setSwitchModal(true);
     }
   };
+  useEffect(() => {
+    setInterval(() => {
+      dispatch({ select: "TIME" });
+      console.log(new Date());
+    }, 2000);
+    setInterval(() => {
+      console.log(new Date());
+    }, 1000);
+  }, []);
+
   return (
     <>
       <MainApp>
@@ -28,7 +41,7 @@ export default function Main({ setSwitchModal, switchModal }: PropsRe) {
           <ButtonSettings onClick={handleClick}>
             <ButtonSettingsImage src={hamSvg} />
           </ButtonSettings>
-          <SecondTemp>3600</SecondTemp>
+          <SecondTemp>{state.time}</SecondTemp>
           <LogoWork>
             <LogoWorkImage src={clockSvg} />
             <LogoWorkText>register-work</LogoWorkText>

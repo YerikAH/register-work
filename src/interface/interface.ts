@@ -11,7 +11,7 @@ export interface StateInitial {
   timeHour: string;
   sessions: string;
 }
-type OptionsAction = "aa" | "Inv" | "gf" | "INCREMENT_SESSION";
+type OptionsAction = "TIME" | "NEW_WORK" | "INCREMENT_SESSION";
 export interface ReducerAction {
   select: OptionsAction;
 }
