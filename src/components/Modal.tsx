@@ -20,9 +20,10 @@ import {
   McTextGuide,
 } from "../styles/modal-styles";
 import stadicts from "../assets/state.svg";
+import { validateNumber } from "../helper/validationInput";
 
 import { ChoiceOptions, initialState } from "../reducers/app.reducer";
-
+import { PayloadData } from "../interface/interface";
 export default function Modal() {
   const elementHTML: Element = document.getElementById("modal")!;
   const [state, dispatch] = useReducer(ChoiceOptions, initialState);
@@ -50,7 +51,7 @@ export default function Modal() {
     validateNumber(inputWriteUser, setNumber, limit);
   };
   const handleClick = () => {
-    const payloadData = {
+    const payloadData: PayloadData = {
       hourData: hour,
       minuteData: minute,
       secondData: second,
@@ -65,29 +66,9 @@ export default function Modal() {
     ) {
       console.log("Faltan datos");
     } else {
+      dispatch({ select: "NEW_DATA", payload: payloadData });
     }
   };
-  function validateNumber(
-    input: string,
-    setNumber: React.Dispatch<React.SetStateAction<number>>,
-    limitNumber: number
-  ) {
-    const noSpace = input.trim();
-    let regexOnlyNumber: RegExp = /^[0-9]+$/;
-    if (!regexOnlyNumber.test(noSpace.trim())) {
-      console.log("Datos incorrectos");
-    } else {
-      const stringToNumber = parseInt(noSpace);
-
-      if (stringToNumber >= limitNumber) {
-        setNumber(limitNumber);
-      } else if (stringToNumber <= 0) {
-        setNumber(0);
-      } else {
-        setNumber(stringToNumber);
-      }
-    }
-  }
   return ReactDOM.createPortal(
     <>
       <ModalComponent>

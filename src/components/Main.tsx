@@ -24,10 +24,10 @@ export default function Main({ setSwitchModal, switchModal }: PropsRe) {
       setSwitchModal(true);
     }
   };
+
   useEffect(() => {
     setInterval(() => {
       dispatch({ select: "TIME" });
-      console.log(new Date());
     }, 2000);
     setInterval(() => {
       console.log(new Date());

@@ -15,3 +15,10 @@ type OptionsAction = "TIME" | "NEW_WORK" | "INCREMENT_SESSION";
 export interface ReducerAction {
   select: OptionsAction;
 }
+export interface PayloadData {
+  hourData: number;
+  minuteData: number;
+  secondData: number;
+  timeData: number;
+  titleData: string;
+}
