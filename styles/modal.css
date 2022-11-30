@@ -1,3 +1,6 @@
+.modal {
+  transition: 0.2s;
+}
 .modal-bg {
   width: 100vw;
   height: 100vh;
@@ -55,17 +58,18 @@
   gap: 5%;
   justify-content: space-between;
 }
-.sessions {
-  flex-direction: column;
-}
+
 .modal-bg-box_grid-one__box {
   display: flex;
   margin-bottom: 1rem;
   justify-content: center;
   gap: 0.5rem;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 1rem;
   top: 0;
+}
+.sessions {
+  flex-direction: row;
 }
 .modal-bg-box-grid-one__label {
   font-size: 0.8rem;

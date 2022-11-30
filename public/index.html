@@ -8,7 +8,7 @@
     <title>register-work</title>
   </head>
   <body>
-    <div class="modal">
+    <div class="modal" id="modal">
       <div class="modal-bg">
         <div class="modal-bg-box">
           <h2 class="modal-bg-box_title">Add name of work</h2>
@@ -40,13 +40,13 @@
                 <label class="modal-bg-box-grid-one__label"
                   >Add Sesions / today</label
                 >
-                <div className="modal-bg-box_grid-one__box sessions">
+                <div class="modal-bg-box_grid-one__box sessions">
                   <button class="modal-bg-box_grid-one__box_button">-</button>
-                  <p className="modal-bg-box_grid-one__box_text">0</p>
+                  <p class="modal-bg-box_grid-one__box_text">0</p>
                   <button class="modal-bg-box_grid-one__box_button">+</button>
                 </div>
               </div>
-              <div className="modal-bg-box_grid-one__box end">
+              <div class="modal-bg-box_grid-one__box end">
                 <a class="modal-bg-box_grid-one__box__a">
                   <img src="../assets/state.svg" /> View Stadicts
                 </a>
@@ -61,15 +61,23 @@
     </div>
     <main class="main-app">
       <section class="main-app_center">
-        <button class="button-open-options">
+        <button
+          class="button-open-options"
+          aria-label="open modal"
+          id="buttonModal"
+        >
           <img src="../assets/ham.svg" />
         </button>
-        <h1 class="count-time">3600</h1>
+        <h1 class="count-time" id="timeTemp">3600</h1>
         <div class="logo-work">
           <img src="../assets//clock.svg" />
           <p class="logo-work_text">register-work</p>
         </div>
       </section>
     </main>
+    <script>
+      import anime from "animejs/lib/anime.es.js";
+    </script>
+    <script type="module" src="../dist/index.js"></script>
   </body>
 </html>
