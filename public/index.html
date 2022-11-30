@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>register-work</title>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-bg">
+        <div class="modal-bg-box">
+          <h2 class="modal-bg-box_title">Add name of work</h2>
+          <div class="modal-bg-box_boxinput">
+            <button class="modal-bg-box-boxinput__button">+</button>
+            <input type="text" class="modal-bg-box-boxinput__input" />
+          </div>
+          <div class="modal-bg-box_grid">
+            <div class="modal-bg-box_grid-one">
+              <div class="modal-bg-box_grid-one__box">
+                <label class="modal-bg-box-grid-one__label">Hour</label>
+                <input class="modal-bg-box-grid-one__input" />
+              </div>
+              <div class="modal-bg-box_grid-one__box">
+                <label class="modal-bg-box-grid-one__label">Minute</label>
+                <input class="modal-bg-box-grid-one__input" />
+              </div>
+              <div class="modal-bg-box_grid-one__box">
+                <label class="modal-bg-box-grid-one__label">Second</label>
+                <input class="modal-bg-box-grid-one__input" />
+              </div>
+            </div>
+            <div class="modal-bg-box_grid-two">
+              <div class="modal-bg-box_grid-one__box">
+                <label class="modal-bg-box-grid-one__label">Time / hours</label>
+                <input class="modal-bg-box-grid-one__input" />
+              </div>
+              <div class="modal-bg-box_grid-one__box">
+                <label class="modal-bg-box-grid-one__label"
+                  >Add Sesions / today</label
+                >
+                <div className="modal-bg-box_grid-one__box sessions">
+                  <button class="modal-bg-box_grid-one__box_button">-</button>
+                  <p className="modal-bg-box_grid-one__box_text">0</p>
+                  <button class="modal-bg-box_grid-one__box_button">+</button>
+                </div>
+              </div>
+              <div className="modal-bg-box_grid-one__box end">
+                <a class="modal-bg-box_grid-one__box__a">
+                  <img src="../assets/state.svg" /> View Stadicts
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="text-guide-modal">
+            The timer will start according to the time you chose.
+          </p>
+        </div>
+      </div>
+    </div>
+    <main class="main-app">
+      <section class="main-app_center">
+        <button class="button-open-options">
+          <img src="../assets/ham.svg" />
+        </button>
+        <h1 class="count-time">3600</h1>
+        <div class="logo-work">
+          <img src="../assets//clock.svg" />
+          <p class="logo-work_text">register-work</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
