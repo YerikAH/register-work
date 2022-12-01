@@ -1,3 +1,4 @@
+import addWork from "./addWork.js";
 import switchModal from "./switchModal.js";
 const d = document;
 // switchModal.ts
@@ -11,3 +12,4 @@ const $minuteInput = d.getElementById("minuteInput");
 const $secondInput = d.getElementById("secondInput");
 const $timeHoursInput = d.getElementById("timeHoursInput");
 switchModal($modal, $buttonModal);
+addWork($newWorkTask, $nameWork, $timeHoursInput, $hourInput, $minuteInput, $secondInput);
