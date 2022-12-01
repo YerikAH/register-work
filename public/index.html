@@ -12,47 +12,70 @@
       <div class="modal-bg">
         <div class="modal-bg-box">
           <h2 class="modal-bg-box_title">Add name of work</h2>
-          <div class="modal-bg-box_boxinput">
-            <button class="modal-bg-box-boxinput__button">+</button>
-            <input type="text" class="modal-bg-box-boxinput__input" />
-          </div>
-          <div class="modal-bg-box_grid">
-            <div class="modal-bg-box_grid-one">
-              <div class="modal-bg-box_grid-one__box">
-                <label class="modal-bg-box-grid-one__label">Hour</label>
-                <input class="modal-bg-box-grid-one__input" />
-              </div>
-              <div class="modal-bg-box_grid-one__box">
-                <label class="modal-bg-box-grid-one__label">Minute</label>
-                <input class="modal-bg-box-grid-one__input" />
-              </div>
-              <div class="modal-bg-box_grid-one__box">
-                <label class="modal-bg-box-grid-one__label">Second</label>
-                <input class="modal-bg-box-grid-one__input" />
-              </div>
+          <form>
+            <div class="modal-bg-box_boxinput">
+              <button
+                type="button"
+                class="modal-bg-box-boxinput__button"
+                id="newWorkTask"
+              >
+                +
+              </button>
+              <input
+                type="text"
+                class="modal-bg-box-boxinput__input"
+                id="nameWork"
+              />
             </div>
-            <div class="modal-bg-box_grid-two">
-              <div class="modal-bg-box_grid-one__box">
-                <label class="modal-bg-box-grid-one__label">Time / hours</label>
-                <input class="modal-bg-box-grid-one__input" />
-              </div>
-              <div class="modal-bg-box_grid-one__box">
-                <label class="modal-bg-box-grid-one__label"
-                  >Add Sesions / today</label
-                >
-                <div class="modal-bg-box_grid-one__box sessions">
-                  <button class="modal-bg-box_grid-one__box_button">-</button>
-                  <p class="modal-bg-box_grid-one__box_text">0</p>
-                  <button class="modal-bg-box_grid-one__box_button">+</button>
+            <div class="modal-bg-box_grid">
+              <div class="modal-bg-box_grid-one">
+                <div class="modal-bg-box_grid-one__box">
+                  <label class="modal-bg-box-grid-one__label">Hour</label>
+                  <input class="modal-bg-box-grid-one__input" id="hourInput" />
+                </div>
+                <div class="modal-bg-box_grid-one__box">
+                  <label class="modal-bg-box-grid-one__label">Minute</label>
+                  <input
+                    class="modal-bg-box-grid-one__input"
+                    id="minuteInput"
+                  />
+                </div>
+                <div class="modal-bg-box_grid-one__box">
+                  <label class="modal-bg-box-grid-one__label">Second</label>
+                  <input
+                    class="modal-bg-box-grid-one__input"
+                    id="secondInput"
+                  />
                 </div>
               </div>
-              <div class="modal-bg-box_grid-one__box end">
-                <a class="modal-bg-box_grid-one__box__a">
-                  <img src="../assets/state.svg" /> View Stadicts
-                </a>
+              <div class="modal-bg-box_grid-two">
+                <div class="modal-bg-box_grid-one__box">
+                  <label class="modal-bg-box-grid-one__label"
+                    >Time / hours</label
+                  >
+                  <input
+                    class="modal-bg-box-grid-one__input"
+                    id="timeHoursInput"
+                  />
+                </div>
+                <div class="modal-bg-box_grid-one__box">
+                  <label class="modal-bg-box-grid-one__label"
+                    >Add Sesions / today</label
+                  >
+                  <div class="modal-bg-box_grid-one__box sessions">
+                    <button class="modal-bg-box_grid-one__box_button">-</button>
+                    <p class="modal-bg-box_grid-one__box_text">0</p>
+                    <button class="modal-bg-box_grid-one__box_button">+</button>
+                  </div>
+                </div>
+                <div class="modal-bg-box_grid-one__box end">
+                  <a class="modal-bg-box_grid-one__box__a">
+                    <img src="../assets/state.svg" /> View Stadicts
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
           <p class="text-guide-modal">
             The timer will start according to the time you chose.
           </p>
@@ -75,9 +98,6 @@
         </div>
       </section>
     </main>
-    <script>
-      import anime from "animejs/lib/anime.es.js";
-    </script>
     <script type="module" src="../dist/index.js"></script>
   </body>
 </html>

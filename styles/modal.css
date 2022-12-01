@@ -130,6 +130,25 @@
   margin-top: 1rem;
   font-size: 0.8rem;
 }
+.modal {
+  transition: 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-active {
+  overflow: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.modal .modal-bg-box {
+  width: 28rem;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.modal-active .modal-bg-box {
+  width: 100%;
+  overflow: visible;
+}
 
 @media (min-width: 600px) {
   .modal-bg-box_grid {

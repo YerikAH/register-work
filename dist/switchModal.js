@@ -1,4 +1,5 @@
 export default function switchModal(modal, buttonModal) {
-    const clickButton = () => { };
-    buttonModal.addEventListener("click", clickButton);
+    buttonModal.addEventListener("click", () => {
+        modal.classList.toggle("modal-active");
+    });
 }
