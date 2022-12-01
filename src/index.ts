@@ -11,4 +11,5 @@ const $hourInput = d.getElementById("hourInput");
 const $minuteInput = d.getElementById("minuteInput");
 const $secondInput = d.getElementById("secondInput");
 const $timeHoursInput = d.getElementById("timeHoursInput");
+
 switchModal($modal, $buttonModal);

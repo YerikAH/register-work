@@ -1,3 +1,4 @@
+
 export default function switchModal(
   modal: HTMLElement,
   buttonModal: HTMLElement
