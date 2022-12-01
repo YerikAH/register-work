@@ -1,3 +1,7 @@
+/* functions */
+import { WorkSave } from "./interfaces/variables.js";
+
+/* Modules */
 import addWork from "./addWork.js";
 import switchModal from "./switchModal.js";
 
@@ -22,3 +26,14 @@ addWork(
   $minuteInput,
   $secondInput
 );
+
+/* Load info */
+document.addEventListener("DOMContentLoaded", (e) => {
+  const loadInfo = localStorage.getItem(WorkSave);
+
+  if (typeof loadInfo === "string") {
+    /* Logic */
+  } else {
+    localStorage.setItem(WorkSave, "[]");
+  }
+});

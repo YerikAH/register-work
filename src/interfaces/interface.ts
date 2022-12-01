@@ -1,7 +1,7 @@
 export interface DataTime {
   nameWork: string;
-  timeHours: string;
-  hour: string;
-  minute: string;
-  second: string;
+  timeHours: number;
+  hour: number;
+  minute: number;
+  second: number;
 }
