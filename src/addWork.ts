@@ -16,7 +16,7 @@ export default function addWork(
     const hourReal = validateInput(hour, 25);
     const minuteReal = validateInput(minute, 60);
     const secondReal = validateInput(second, 60);
-    const timeHoursReal = validateInput(timeHours, 3600);
+    const timeHoursReal = validateInput(timeHours, 18000);
 
     const saveData: DataTime = {
       nameWork: nameWorkReal,
@@ -25,7 +25,7 @@ export default function addWork(
       minute: minuteReal,
       second: secondReal,
     };
-    let getLocalStorage = localStorage.getItem(WorkSave);
+    const getLocalStorage = localStorage.getItem(WorkSave);
     if (typeof getLocalStorage === "string") {
       insertData(saveData, getLocalStorage);
     } else {
