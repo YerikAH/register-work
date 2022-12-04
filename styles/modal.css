@@ -122,28 +122,15 @@
   font-size: 0.8rem;
 }
 .modal {
-  transition: 1s;
   opacity: 0;
   visibility: hidden;
 }
-.modal-active {
-  overflow: auto;
-  opacity: 1;
-  visibility: visible;
+.view-work {
+  display: none;
 }
-.modal .modal-bg-box {
-  width: 28rem;
-  transition: 0.3s;
-  overflow: hidden;
+.add-work {
+  display: block;
 }
-.modal-active .modal-bg-box {
-  width: 100%;
-  overflow: visible;
-}
-.icon-active {
-  rotate: 45deg;
-}
-
 @media (min-width: 600px) {
   .modal-bg-box_grid {
     grid-template-columns: 28% 68%;

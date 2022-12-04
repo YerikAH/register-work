@@ -1,0 +1,11 @@
+.modal-active {
+  overflow: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.add-work-active {
+  display: none;
+}
+.view-work-active {
+  display: block;
+}
