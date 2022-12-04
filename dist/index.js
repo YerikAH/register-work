@@ -4,6 +4,7 @@ import { SessionWork } from "./interfaces/variables.js";
 /* Modules */
 import addWork from "./addWork.js";
 import switchModal from "./switchModal.js";
+import sessionsWork from "./sessionsWork.js";
 const d = document;
 // switchModal.ts
 const $modal = d.getElementById("modal");
@@ -15,8 +16,13 @@ const $hourInput = d.getElementById("hourInput");
 const $minuteInput = d.getElementById("minuteInput");
 const $secondInput = d.getElementById("secondInput");
 const $timeHoursInput = d.getElementById("timeHoursInput");
+// sessionsWork.ts
+const $buttonIncrement = d.getElementById("buttonIncrementSessions");
+const $buttonDecrement = d.getElementById("buttonDecrementSessions");
+const $countSessions = d.getElementById("countSessions");
 switchModal($modal, $buttonModal);
 addWork($newWorkTask, $nameWork, $timeHoursInput, $hourInput, $minuteInput, $secondInput);
+sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
 /* Load info */
 document.addEventListener("DOMContentLoaded", (e) => {
     const loadInfo = localStorage.getItem(WorkSave);
@@ -28,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         localStorage.setItem(WorkSave, "[]");
     }
     if (typeof loadSessions === "string") {
-        /* Logic */
+        $countSessions.textContent = loadSessions;
     }
     else {
         localStorage.setItem(SessionWork, "0");

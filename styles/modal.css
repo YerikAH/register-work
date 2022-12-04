@@ -12,7 +12,7 @@
 .modal-bg-box {
   background-color: var(--bg-modal);
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 2.5rem;
   max-width: 36.25rem;
   width: 100%;
 }
@@ -103,7 +103,7 @@
   background-color: var(--blue);
   color: var(--white);
   font-weight: 600;
-  border-radius: 0.3rem;
+  border-radius: 0.6rem;
   text-align: center;
   font-size: 0.8rem;
   display: flex;
@@ -139,6 +139,9 @@
 .modal-active .modal-bg-box {
   width: 100%;
   overflow: visible;
+}
+.icon-active {
+  rotate: 45deg;
 }
 
 @media (min-width: 600px) {

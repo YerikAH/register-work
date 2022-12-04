@@ -1,18 +1,21 @@
 import { SessionWork } from "./interfaces/variables.js";
 export default function sessionsWork(count, incrementButton, decrementButton) {
-    let valueCount = 0;
+    let valueCount;
     document.addEventListener("click", (e) => {
         valueCount = loadValueCount();
         logicCount(e, valueCount);
+        console.log("yep");
     });
     function logicCount(e, valueCountArg) {
         if (e.target === incrementButton) {
             valueCountArg++;
             updateCountSessions(valueCountArg);
+            console.log("incremewnt");
         }
         if (e.target === decrementButton) {
-            valueCount = valueCountArg === 0 ? 0 : valueCount--;
+            valueCountArg === 0 ? 0 : valueCountArg--;
             updateCountSessions(valueCountArg);
+            console.log("decrement");
         }
     }
     function loadValueCount() {
