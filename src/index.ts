@@ -7,6 +7,7 @@ import addWork from "./addWork.js";
 import switchModal from "./switchModal.js";
 import sessionsWork from "./sessionsWork.js";
 import viewSwitchWork from "./viewSwitchWork.js";
+import getWork from "./getWork.js";
 
 const d = document;
 // switchModal.ts
@@ -28,6 +29,8 @@ const $buttonDecrement = d.getElementById("buttonDecrementSessions")!;
 const $countSessions = d.getElementById("countSessions")!;
 // viewSwitchWork.ts
 const $buttonView = d.getElementById("buttonView")!;
+// getWork.ts
+const $fatherWork = d.getElementById("fatherWork")!;
 
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 addWork(
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const loadSessions = localStorage.getItem(SessionWork);
   const loadDoor = localStorage.getItem(ModalDoor);
   if (typeof loadInfo === "string") {
-    /* Logic */
+    getWork($fatherWork);
   } else {
     localStorage.setItem(WorkSave, "[]");
   }
