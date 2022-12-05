@@ -5,6 +5,7 @@ import getWork from "./getWork.js";
 export default function addWork(newWork, nameWork, timeHours, hour, minute, second) {
     newWork.addEventListener("click", (e) => {
         e.preventDefault();
+        const ifError = errorInput(nameWork, timeHours, hour, minute, second);
         const nameWorkReal = nameWork.value;
         const hourReal = validateInput(hour, 25);
         const minuteReal = validateInput(minute, 60);
@@ -35,4 +36,16 @@ export default function addWork(newWork, nameWork, timeHours, hour, minute, seco
             insertData(saveData);
         }
     });
+    function errorInput(...arg) {
+        let validateInput = false;
+        arg.forEach((item) => {
+            if (item.value === "" || item.value === " ") {
+                validateInput = true;
+            }
+            else {
+                validateInput = false;
+            }
+        });
+        return validateInput;
+    }
 }

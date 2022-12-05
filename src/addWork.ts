@@ -13,6 +13,8 @@ export default function addWork(
 ) {
   newWork.addEventListener("click", (e: MouseEvent) => {
     e.preventDefault();
+
+    const ifError = errorInput(nameWork, timeHours, hour, minute, second);
     const nameWorkReal = nameWork.value;
     const hourReal = validateInput(hour, 25);
     const minuteReal = validateInput(minute, 60);
@@ -44,4 +46,15 @@ export default function addWork(
       insertData(saveData);
     }
   });
+  function errorInput(...arg: HTMLInputElement[]) {
+    let validateInput = false;
+    arg.forEach((item) => {
+      if (item.value === "" || item.value === " ") {
+        validateInput = true;
+      } else {
+        validateInput = false;
+      }
+    });
+    return validateInput;
+  }
 }
