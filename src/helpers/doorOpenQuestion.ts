@@ -1,4 +1,4 @@
-import { ModalDoor } from "../interfaces/variables.js";
+import { ClassToggleModal, ModalDoor } from "../interfaces/variables.js";
 export function doorOpenQuestion(
   modal: HTMLElement,
   buttonOne: string, // ADD
@@ -8,15 +8,15 @@ export function doorOpenQuestion(
   if (typeof door === "string") {
     if (door === `OPEN ${buttonOne}`) {
       localStorage.setItem(ModalDoor, `CLOSE ${buttonOne}`);
-      modal.classList.toggle("modal-active"); // close
+      modal.classList.toggle(ClassToggleModal); // close
     } else if (door === `OPEN ${buttonTwo}`) {
       localStorage.setItem(ModalDoor, `OPEN ${buttonOne}`);
     } else {
       localStorage.setItem(ModalDoor, `OPEN ${buttonOne}`);
-      modal.classList.toggle("modal-active"); // open
+      modal.classList.toggle(ClassToggleModal); // open
     }
   } else {
     localStorage.setItem(ModalDoor, `OPEN ${buttonOne}`);
-    modal.classList.toggle("modal-active"); // open
+    modal.classList.toggle(ClassToggleModal); // open
   }
 }

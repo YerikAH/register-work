@@ -9,11 +9,12 @@ import sessionsWork from "./sessionsWork.js";
 import viewSwitchWork from "./viewSwitchWork.js";
 import getWork from "./getWork.js";
 import deleteWork from "./deleteWork.js";
+import closeModal from "./closeModal.js";
 
 const d = document;
 // switchModal.ts
 const $buttonModal = d.getElementById("buttonModal")!;
-// switchModal.ts && viewSwitchWork.ts
+// switchModal.ts && viewSwitchWork.ts && closeModal.ts
 const $modal = d.getElementById("modal")!;
 const $viewWork = d.getElementById("viewWork")!;
 const $addWork = d.getElementById("addWork")!;
@@ -31,6 +32,7 @@ const $countSessions = d.getElementById("countSessions")!;
 // viewSwitchWork.ts
 const $buttonView = d.getElementById("buttonView")!;
 // deleteWork.ts
+// closeModal.ts
 
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 addWork(
@@ -44,6 +46,7 @@ addWork(
 sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
 viewSwitchWork($modal, $addWork, $viewWork, $buttonView);
 deleteWork();
+closeModal($modal);
 
 /* Load info */
 document.addEventListener("DOMContentLoaded", (e) => {
