@@ -31,6 +31,23 @@
   color: var(--white);
   letter-spacing: 1px;
 }
+.no-work-task {
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+}
+.no-work-task p {
+  margin-top: 1rem;
+  color: var(--color-second);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.no-work-task h4 {
+  color: var(--white);
+  margin-top: 2rem;
+  font-size: 1rem;
+}
 @media (min-width: 600px) {
   .work-task {
     flex-direction: row;

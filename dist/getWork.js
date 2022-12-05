@@ -29,6 +29,7 @@ export default function getWork() {
                 deleteElement.setAttribute("aria-label", "delete work");
                 deleteElement.setAttribute(WorkId, idString);
                 imageDeleteElement.setAttribute("src", "../assets/trash.svg");
+                imageDeleteElement.setAttribute(WorkId, idString);
                 imageDeleteElement.setAttribute("alt", "trash");
                 nameWorkParElement.textContent = hourWorkString;
                 hourParElement.textContent = ` ${hourString}: `;
@@ -47,6 +48,20 @@ export default function getWork() {
             $fatherWork.appendChild($fragment);
         }
         else {
+            const voidElement = document.createElement("div");
+            const voidElementImage = document.createElement("img");
+            const voidElementTitle = document.createElement("h4");
+            const voidElementMessage = document.createElement("p");
+            voidElement.className = "no-work-task";
+            voidElementImage.setAttribute("src", "../assets/void.svg");
+            voidElementTitle.textContent = "You didn't add any jobs";
+            voidElementMessage.textContent =
+                "It looks like you didn't add any jobs, do you know you can add jobs? You just have to click on the icon of a sum.";
+            voidElement.appendChild(voidElementImage);
+            voidElement.appendChild(voidElementTitle);
+            voidElement.appendChild(voidElementMessage);
+            $fragment.appendChild(voidElement);
+            $fatherWork.appendChild($fragment);
         }
     }
     else {

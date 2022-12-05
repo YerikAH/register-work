@@ -3,8 +3,10 @@ import { DataTime } from "./interfaces/interface.js";
 import getWork from "./getWork.js";
 export default function deleteWork() {
   document.addEventListener("click", (e) => {
-    const targetElement = e.currentTarget;
+    const targetElement = e.target;
+
     if (targetElement instanceof HTMLElement) {
+      console.log("Aaa");
       const getIdClick = targetElement.getAttribute(WorkId);
       const loadInfo = localStorage.getItem(WorkSave)!;
       const stringToArray: DataTime[] = JSON.parse(loadInfo);
