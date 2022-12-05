@@ -8,6 +8,7 @@ import switchModal from "./switchModal.js";
 import sessionsWork from "./sessionsWork.js";
 import viewSwitchWork from "./viewSwitchWork.js";
 import getWork from "./getWork.js";
+import deleteWork from "./deleteWork.js";
 const d = document;
 // switchModal.ts
 const $buttonModal = d.getElementById("buttonModal");
@@ -28,10 +29,12 @@ const $buttonDecrement = d.getElementById("buttonDecrementSessions");
 const $countSessions = d.getElementById("countSessions");
 // viewSwitchWork.ts
 const $buttonView = d.getElementById("buttonView");
+// deleteWork.ts
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 addWork($newWorkTask, $nameWork, $timeHoursInput, $hourInput, $minuteInput, $secondInput);
 sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
 viewSwitchWork($modal, $addWork, $viewWork, $buttonView);
+deleteWork();
 /* Load info */
 document.addEventListener("DOMContentLoaded", (e) => {
     const loadInfo = localStorage.getItem(WorkSave);
