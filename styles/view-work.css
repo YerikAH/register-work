@@ -1,0 +1,39 @@
+.father-work {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.work-task {
+  background: var(--bg-color);
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+.work-task-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+.work-task-grid div {
+  display: flex;
+}
+.work-task button {
+  background-color: transparent;
+  color: rgb(206, 52, 52);
+}
+.work-task h4 {
+  color: var(--color-second);
+}
+.work-task p {
+  font-size: 0.8rem;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+@media (min-width: 600px) {
+  .work-task {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

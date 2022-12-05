@@ -11,4 +11,3 @@ export default function switchModal(
     viewWork.classList.remove("view-work-active");
   });
 }
-// add  view

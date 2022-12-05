@@ -4,4 +4,5 @@ export interface DataTime {
   hour: number;
   minute: number;
   second: number;
+  idWork: string;
 }

@@ -28,8 +28,6 @@ const $buttonDecrement = d.getElementById("buttonDecrementSessions");
 const $countSessions = d.getElementById("countSessions");
 // viewSwitchWork.ts
 const $buttonView = d.getElementById("buttonView");
-// getWork.ts
-const $fatherWork = d.getElementById("fatherWork");
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 addWork($newWorkTask, $nameWork, $timeHoursInput, $hourInput, $minuteInput, $secondInput);
 sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const loadSessions = localStorage.getItem(SessionWork);
     const loadDoor = localStorage.getItem(ModalDoor);
     if (typeof loadInfo === "string") {
-        getWork($fatherWork);
+        getWork();
     }
     else {
         localStorage.setItem(WorkSave, "[]");

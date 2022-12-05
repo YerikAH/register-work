@@ -6,4 +6,3 @@ export default function switchModal(modal, buttonModal, addWork, viewWork) {
         viewWork.classList.remove("view-work-active");
     });
 }
-// add  view

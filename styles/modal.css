@@ -44,6 +44,7 @@
   color: var(--white);
   padding: 0 1.5rem;
   font-weight: 900;
+  width: 100%;
 }
 .modal-bg-box_grid {
   display: grid;
