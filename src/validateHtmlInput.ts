@@ -1,3 +1,4 @@
+import { validateInput } from "./helpers/validateInput.js";
 import { voidInput } from "./helpers/voidInput.js";
 import { argAddWork } from "./interfaces/interface.js";
 import { ErrorInput } from "./interfaces/variables.js";
@@ -12,8 +13,9 @@ export default function validateHtmlInput(
   newWork.addEventListener("click", (e) => {
     e.preventDefault();
 
-    let ifError = voidInput(nameWork, timeHours, hour, minute, second);
-
+    const ifError = voidInput(nameWork, timeHours, hour, minute, second);
+    const validateHourInput = validateInput(hour, 25);
+    //let timeBreakTime = timeBreaK(..arg) Add validate HTML
     if (ifError) {
       $elementText.textContent =
         "An error occurred, did I complete all the fields?";

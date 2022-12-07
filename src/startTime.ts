@@ -1,7 +1,7 @@
 import { DataTime } from "./interfaces/interface.js";
 import { WorkSave } from "./interfaces/variables.js";
 
-export default function startTime() {
+export default function startTime(timeUi: HTMLElement) {
   console.log("aa");
   setInterval(timeIsEqual, 1000);
 
@@ -17,8 +17,6 @@ export default function startTime() {
         const getHour = item.hour;
         const getMinute = item.minute;
         const getSecond = item.second;
-        console.log("Aaa");
-        console.log(getHourCurrent, getMinuteCurrent, getSecondCurrent);
         if (
           getHourCurrent === getHour &&
           getMinuteCurrent === getMinute &&

@@ -1,5 +1,4 @@
 import { ErrorInput, WorkSave } from "./interfaces/variables.js";
-import { validateInput } from "./helpers/validateInput.js";
 import { insertData } from "./helpers/insertData.js";
 import getWork from "./getWork.js";
 export default function addWork(data) {
@@ -7,11 +6,12 @@ export default function addWork(data) {
     let { newWork, nameWork, timeHours, hour, minute, second } = data;
     newWork.addEventListener("click", (e) => {
         e.preventDefault();
+        // We're sure that the user is sending us the correct data, because the validateHtmlInput.ts file takes care of all that.
         const nameWorkReal = nameWork.value;
-        const hourReal = validateInput(hour, 24);
-        const minuteReal = validateInput(minute, 60);
-        const secondReal = validateInput(second, 60);
-        const timeHoursReal = validateInput(timeHours, 18000);
+        const hourReal = parseInt(hour.value);
+        const minuteReal = parseInt(minute.value);
+        const secondReal = parseInt(second.value);
+        const timeHoursReal = parseInt(timeHours.value);
         const idWork = `${Date.now()}`;
         const saveData = {
             nameWork: nameWorkReal,
