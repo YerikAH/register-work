@@ -1,5 +1,6 @@
 import { WorkId, WorkSave } from "./interfaces/variables.js";
 import { pushZero } from "./helpers/pushZero.js";
+import { pmOram } from "./helpers/pmOram.js";
 export default function getWork() {
     const $fatherWork = document.getElementById("fatherWork");
     const loadInfo = localStorage.getItem(WorkSave);
@@ -14,6 +15,7 @@ export default function getWork() {
                 const minuteString = pushZero(item.minute);
                 const secondString = pushZero(item.second);
                 const idString = item.idWork;
+                const getPmOrAm = pmOram(item.hour);
                 const dateDivElement = document.createElement("div");
                 const dateGridDivElement = document.createElement("div");
                 const nameWorkParElement = document.createElement("h4");
@@ -34,7 +36,7 @@ export default function getWork() {
                 nameWorkParElement.textContent = hourWorkString;
                 hourParElement.textContent = ` ${hourString}: `;
                 minuteParElement.textContent = `${minuteString}: `;
-                secondParElement.textContent = `${secondString}`;
+                secondParElement.textContent = `${secondString} ${getPmOrAm}`;
                 dateGridDivElement.appendChild(nameWorkParElement);
                 timeDivElement.appendChild(hourParElement);
                 timeDivElement.appendChild(minuteParElement);

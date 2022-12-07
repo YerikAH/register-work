@@ -12,6 +12,7 @@ import deleteWork from "./deleteWork.js";
 import closeModal from "./closeModal.js";
 import { argAddWork } from "./interfaces/interface.js";
 import validateHtmlInput from "./validateHtmlInput.js";
+import startTime from "./startTime.js";
 
 const d = document;
 // switchModal.ts
@@ -46,6 +47,7 @@ const $countSessions = d.getElementById("countSessions")!;
 const $buttonView = d.getElementById("buttonView")!;
 // deleteWork.ts
 // closeModal.ts
+// startTime.ts
 
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 validateHtmlInput(dataAddWorkArg, $messageAddWork);
@@ -54,6 +56,7 @@ sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
 viewSwitchWork($modal, $addWork, $viewWork, $buttonView);
 deleteWork();
 closeModal($modal);
+startTime();
 
 /* Load info */
 document.addEventListener("DOMContentLoaded", (e) => {

@@ -8,7 +8,7 @@ export default function addWork(data) {
     newWork.addEventListener("click", (e) => {
         e.preventDefault();
         const nameWorkReal = nameWork.value;
-        const hourReal = validateInput(hour, 25);
+        const hourReal = validateInput(hour, 24);
         const minuteReal = validateInput(minute, 60);
         const secondReal = validateInput(second, 60);
         const timeHoursReal = validateInput(timeHours, 18000);
