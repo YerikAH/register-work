@@ -6,3 +6,11 @@ export interface DataTime {
   second: number;
   idWork: string;
 }
+export interface argAddWork {
+  newWork: HTMLElement;
+  nameWork: HTMLInputElement;
+  timeHours: HTMLInputElement;
+  hour: HTMLInputElement;
+  minute: HTMLInputElement;
+  second: HTMLInputElement;
+}

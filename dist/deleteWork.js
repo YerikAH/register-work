@@ -4,7 +4,6 @@ export default function deleteWork() {
     document.addEventListener("click", (e) => {
         const targetElement = e.target;
         if (targetElement instanceof HTMLElement) {
-            console.log("Aaa");
             const getIdClick = targetElement.getAttribute(WorkId);
             const loadInfo = localStorage.getItem(WorkSave);
             const stringToArray = JSON.parse(loadInfo);

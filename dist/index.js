@@ -10,6 +10,7 @@ import viewSwitchWork from "./viewSwitchWork.js";
 import getWork from "./getWork.js";
 import deleteWork from "./deleteWork.js";
 import closeModal from "./closeModal.js";
+import validateHtmlInput from "./validateHtmlInput.js";
 const d = document;
 // switchModal.ts
 const $buttonModal = d.getElementById("buttonModal");
@@ -17,13 +18,23 @@ const $buttonModal = d.getElementById("buttonModal");
 const $modal = d.getElementById("modal");
 const $viewWork = d.getElementById("viewWork");
 const $addWork = d.getElementById("addWork");
-// addWork.ts
+// addWork.ts && validateHtmlInput.ts
 const $newWorkTask = d.getElementById("newWorkTask");
 const $nameWork = d.getElementById("nameWork");
 const $hourInput = d.getElementById("hourInput");
 const $minuteInput = d.getElementById("minuteInput");
 const $secondInput = d.getElementById("secondInput");
 const $timeHoursInput = d.getElementById("timeHoursInput");
+const dataAddWorkArg = {
+    newWork: $newWorkTask,
+    nameWork: $nameWork,
+    timeHours: $timeHoursInput,
+    hour: $hourInput,
+    minute: $minuteInput,
+    second: $secondInput,
+};
+// validateHtmlInput.ts
+const $messageAddWork = d.getElementById("messageAddWork");
 // sessionsWork.ts
 const $buttonIncrement = d.getElementById("buttonIncrementSessions");
 const $buttonDecrement = d.getElementById("buttonDecrementSessions");
@@ -33,7 +44,8 @@ const $buttonView = d.getElementById("buttonView");
 // deleteWork.ts
 // closeModal.ts
 switchModal($modal, $buttonModal, $addWork, $viewWork);
-addWork($newWorkTask, $nameWork, $timeHoursInput, $hourInput, $minuteInput, $secondInput);
+validateHtmlInput(dataAddWorkArg, $messageAddWork);
+addWork(dataAddWorkArg);
 sessionsWork($countSessions, $buttonIncrement, $buttonDecrement);
 viewSwitchWork($modal, $addWork, $viewWork, $buttonView);
 deleteWork();

@@ -6,7 +6,6 @@ export default function deleteWork() {
     const targetElement = e.target;
 
     if (targetElement instanceof HTMLElement) {
-      console.log("Aaa");
       const getIdClick = targetElement.getAttribute(WorkId);
       const loadInfo = localStorage.getItem(WorkSave)!;
       const stringToArray: DataTime[] = JSON.parse(loadInfo);

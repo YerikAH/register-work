@@ -131,6 +131,23 @@
 }
 .add-work {
   display: block;
+  position: relative;
+}
+.message-add-work {
+  position: absolute;
+  top: -3.5rem;
+  width: 100%;
+  background: var(--bg-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--blue);
+  display: none;
+}
+.message-add-work p {
+  text-align: center;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 @media (min-width: 600px) {
   .modal-bg-box_grid {
