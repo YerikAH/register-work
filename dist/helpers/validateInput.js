@@ -3,7 +3,7 @@ export function validateInput(input, limit) {
     const valueNoSpace = input.value.trim();
     if (regexNumber.test(valueNoSpace)) {
         const numberCorrect = parseInt(valueNoSpace);
-        if (numberCorrect >= limit) {
+        if (numberCorrect >= limit || numberCorrect < 0) {
             return true;
         }
         else {

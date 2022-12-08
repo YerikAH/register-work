@@ -8,20 +8,17 @@ export default function sessionsWork(
   document.addEventListener("click", (e) => {
     valueCount = loadValueCount();
     logicCount(e, valueCount);
-    console.log("yep");
   });
 
   function logicCount(e: MouseEvent, valueCountArg: number) {
     if (e.target === incrementButton) {
       valueCountArg++;
       updateCountSessions(valueCountArg);
-      console.log("incremewnt");
     }
 
     if (e.target === decrementButton) {
       valueCountArg === 0 ? 0 : valueCountArg--;
       updateCountSessions(valueCountArg);
-      console.log("decrement");
     }
   }
 

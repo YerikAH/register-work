@@ -1,8 +1,8 @@
+import { hourToSecond } from "./helpers/hourToSecond.js";
 import { DataTime } from "./interfaces/interface.js";
 import { WorkSave } from "./interfaces/variables.js";
 
-export default function startTime(timeUi: HTMLElement) {
-  console.log("aa");
+export default function startTime() {
   setInterval(timeIsEqual, 1000);
 
   function timeIsEqual() {
@@ -14,6 +14,7 @@ export default function startTime(timeUi: HTMLElement) {
     if (typeof getTimeAlarm === "string") {
       const stringToArray: DataTime[] = JSON.parse(getTimeAlarm);
       stringToArray.forEach((item) => {
+        const getTimeHour = hourToSecond(item.timeHours);
         const getHour = item.hour;
         const getMinute = item.minute;
         const getSecond = item.second;

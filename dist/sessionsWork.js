@@ -4,18 +4,15 @@ export default function sessionsWork(count, incrementButton, decrementButton) {
     document.addEventListener("click", (e) => {
         valueCount = loadValueCount();
         logicCount(e, valueCount);
-        console.log("yep");
     });
     function logicCount(e, valueCountArg) {
         if (e.target === incrementButton) {
             valueCountArg++;
             updateCountSessions(valueCountArg);
-            console.log("incremewnt");
         }
         if (e.target === decrementButton) {
             valueCountArg === 0 ? 0 : valueCountArg--;
             updateCountSessions(valueCountArg);
-            console.log("decrement");
         }
     }
     function loadValueCount() {
