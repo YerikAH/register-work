@@ -1,19 +1,24 @@
 import { hourToSecond } from "./helpers/hourToSecond.js";
 import { DataTime } from "./interfaces/interface.js";
-import { WorkSave } from "./interfaces/variables.js";
-import timer from "./timer.js";
+import {
+  StartTimer,
+  StartTimerNumber,
+  WorkSave,
+} from "./interfaces/variables.js";
 
 export default function startTime() {
+  let timerOut: number;
   const $timeTemp = document.getElementById("timeTemp")!;
   setInterval(timeIsEqual, 1000);
-  let activateTimer = false;
-  let activateTimerHour: number;
-  let timerOut: number;
+
   function timeIsEqual() {
     const timeFather = new Date();
     const getHourCurrent: number = timeFather.getHours();
     const getMinuteCurrent: number = timeFather.getMinutes();
     const getSecondCurrent: number = timeFather.getSeconds();
+
+    const startTimeQuestion = localStorage.getItem(StartTimer);
+    const startTimeNumber = localStorage.getItem(StartTimerNumber);
     const getTimeAlarm = localStorage.getItem(WorkSave);
 
     console.log(getHourCurrent, getMinuteCurrent, getSecondCurrent);
@@ -30,23 +35,37 @@ export default function startTime() {
           getSecondCurrent === getSecond
         ) {
           console.log("Start Timer");
-          clearTimeout(timerOut);
-          activateTimerHour = getTimeHour;
-          activateTimer = true;
-          timer();
+          const convertToString = getTimeHour.toString();
+          localStorage.setItem(StartTimerNumber, "0");
+          localStorage.setItem(StartTimer, "FALSE");
+          setTimeout(() => {
+            localStorage.setItem(StartTimerNumber, convertToString);
+            localStorage.setItem(StartTimer, "TRUE");
+          }, 2000);
         }
       });
     } else {
       localStorage.setItem(WorkSave, "[]");
     }
-    if (activateTimer) {
-      timerOut = setTimeout(timerOutFunction, 1000);
+
+    if (startTimeQuestion === "TRUE") {
+      timerOut = setTimeout(timerOutFunction, 500);
+
       function timerOutFunction() {
-        if (activateTimerHour !== 0) {
-          activateTimerHour--;
-          $timeTemp.textContent = `${activateTimerHour}`;
+        let numberTemp: number;
+        if (typeof startTimeNumber === "string") {
+          numberTemp = parseInt(startTimeNumber);
         } else {
-          activateTimer = false;
+          numberTemp = 0;
+        }
+
+        if (numberTemp !== 0) {
+          numberTemp--;
+          $timeTemp.textContent = `${numberTemp}`;
+          const convertNumberTemp = numberTemp.toString();
+          localStorage.setItem(StartTimerNumber, convertNumberTemp);
+        } else {
+          localStorage.setItem(StartTimer, "FALSE");
           $timeTemp.textContent = `3600`;
           clearTimeout(timerOut);
         }
