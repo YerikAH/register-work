@@ -12,6 +12,7 @@ import deleteWork from "./deleteWork.js";
 import closeModal from "./closeModal.js";
 import validateHtmlInput from "./validateHtmlInput.js";
 import startTime from "./startTime.js";
+import newDay from "./newDay.js";
 const d = document;
 // switchModal.ts
 const $buttonModal = d.getElementById("buttonModal");
@@ -45,6 +46,8 @@ const $buttonView = d.getElementById("buttonView");
 // deleteWork.ts
 // closeModal.ts
 // startTime.ts
+//newDay.ts
+newDay();
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 validateHtmlInput(dataAddWorkArg, $messageAddWork);
 addWork(dataAddWorkArg);

@@ -13,6 +13,7 @@ import closeModal from "./closeModal.js";
 import { argAddWork } from "./interfaces/interface.js";
 import validateHtmlInput from "./validateHtmlInput.js";
 import startTime from "./startTime.js";
+import newDay from "./newDay.js";
 
 const d = document;
 // switchModal.ts
@@ -37,6 +38,7 @@ const dataAddWorkArg: argAddWork = {
   minute: $minuteInput,
   second: $secondInput,
 };
+
 // validateHtmlInput.ts
 const $messageAddWork = d.getElementById("messageAddWork")!;
 // sessionsWork.ts
@@ -49,6 +51,8 @@ const $buttonView = d.getElementById("buttonView")!;
 // closeModal.ts
 // startTime.ts
 
+//newDay.ts
+newDay();
 switchModal($modal, $buttonModal, $addWork, $viewWork);
 validateHtmlInput(dataAddWorkArg, $messageAddWork);
 addWork(dataAddWorkArg);

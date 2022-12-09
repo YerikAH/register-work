@@ -4,6 +4,8 @@ export const ModalDoor = "MODAL-DOOR";
 export const ErrorInput = "ERROR-INPUT";
 export const StartTimer = "START-TIMER";
 export const StartTimerNumber = "TIMER-NUMBER";
+export const NewDayStorage = "DAY-IS";
+export const SessionsByDay = "SESSION-DAY";
 
 export const WorkId = "WORK-ID";
 

@@ -14,3 +14,7 @@ export interface argAddWork {
   minute: HTMLInputElement;
   second: HTMLInputElement;
 }
+export interface SessionDay {
+  dayPast: string;
+  sessionsPast: string;
+}
