@@ -26,6 +26,9 @@ export default function addWork(data) {
             if (getErrorInput === "FALSE") {
                 thereAerror = true;
             }
+            else {
+                thereAerror = false;
+            }
         }
         if (thereAerror) {
             // reset input

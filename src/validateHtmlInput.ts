@@ -3,13 +3,16 @@ import { voidInput } from "./helpers/voidInput.js";
 import { argAddWork } from "./interfaces/interface.js";
 import {
   MessageEmpty,
+  MessageErrorUnknow,
   MessageHour,
   MessageMinute,
+  MessageNoRepeat,
   MessageSecond,
   MessageSuccess,
   MessageTimeHour,
 } from "./interfaces/messages.js";
 import { ErrorInput } from "./interfaces/variables.js";
+import { noRepeatTime } from "./noRepeatTime.js";
 export default function validateHtmlInput(
   data: argAddWork,
   messageError: HTMLElement
@@ -26,6 +29,7 @@ export default function validateHtmlInput(
     const validateMinuteInput = validateInput(minute, 60);
     const validateSecondInput = validateInput(second, 60);
     const validateTimeHoursInput = validateInput(timeHours, 7);
+    const validateNoRepeat = noRepeatTime(hour);
 
     if (ifError) {
       messageForError = MessageEmpty;
@@ -37,6 +41,10 @@ export default function validateHtmlInput(
       messageForError = MessageSecond;
     } else if (validateTimeHoursInput) {
       messageForError = MessageTimeHour;
+    } else if (validateNoRepeat) {
+      messageForError = MessageNoRepeat;
+    } else {
+      messageForError = MessageErrorUnknow;
     }
 
     if (
@@ -44,7 +52,8 @@ export default function validateHtmlInput(
       validateHourInput ||
       validateMinuteInput ||
       validateSecondInput ||
-      validateTimeHoursInput
+      validateTimeHoursInput ||
+      validateNoRepeat
     ) {
       $elementText.textContent = messageForError;
       messageError.style.setProperty("border", "1px solid var(--red)");

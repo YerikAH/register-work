@@ -31,6 +31,8 @@ export default function addWork(data: argAddWork) {
     if (typeof getErrorInput === "string") {
       if (getErrorInput === "FALSE") {
         thereAerror = true;
+      } else {
+        thereAerror = false;
       }
     }
 
