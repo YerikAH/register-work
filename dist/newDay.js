@@ -2,7 +2,7 @@ import { NewDayStorage, StartTimer, StartTimerNumber, SessionWork, } from "./int
 export default function newDay() {
     document.addEventListener("DOMContentLoaded", (e) => {
         const newDayStorage = localStorage.getItem(NewDayStorage);
-        const dayCurrent = `${new Date().getDay()}`;
+        const dayCurrent = `${new Date().getDate()}`;
         const monthCurrent = `${new Date().getMonth()}`;
         const timeCurrent = `${dayCurrent} | ${monthCurrent}`;
         if (typeof newDayStorage === "string") {

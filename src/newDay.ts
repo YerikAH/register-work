@@ -8,7 +8,7 @@ import {
 export default function newDay() {
   document.addEventListener("DOMContentLoaded", (e) => {
     const newDayStorage = localStorage.getItem(NewDayStorage);
-    const dayCurrent: string = `${new Date().getDay()}`;
+    const dayCurrent: string = `${new Date().getDate()}`;
     const monthCurrent: string = `${new Date().getMonth()}`;
     const timeCurrent: string = `${dayCurrent} | ${monthCurrent}`;
 

@@ -12,7 +12,6 @@ export default function startTime() {
         const startTimeQuestion = localStorage.getItem(StartTimer);
         const startTimeNumber = localStorage.getItem(StartTimerNumber);
         const getTimeAlarm = localStorage.getItem(WorkSave);
-        console.log(getHourCurrent, getMinuteCurrent, getSecondCurrent);
         if (typeof getTimeAlarm === "string") {
             const stringToArray = JSON.parse(getTimeAlarm);
             stringToArray.forEach((item) => {
@@ -23,7 +22,6 @@ export default function startTime() {
                 if (getHourCurrent === getHour &&
                     getMinuteCurrent === getMinute &&
                     getSecondCurrent === getSecond) {
-                    console.log("Start Timer");
                     const convertToString = getTimeHour.toString();
                     localStorage.setItem(StartTimerNumber, "0");
                     localStorage.setItem(StartTimer, "FALSE");

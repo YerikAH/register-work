@@ -44,7 +44,7 @@ export default function sessionsWork(
   }
 
   function updateDataDay(valueNumber: number) {
-    const dayCurrent: string = `${new Date().getDay()}`;
+    const dayCurrent: string = `${new Date().getDate()}`;
     const monthCurrent: string = `${new Date().getMonth()}`;
     const timeCurrent: string = `${dayCurrent} | ${monthCurrent}`;
     let myDataSessions: SessionDay = {

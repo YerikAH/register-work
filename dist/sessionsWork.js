@@ -33,7 +33,7 @@ export default function sessionsWork(count, incrementButton, decrementButton) {
         count.textContent = loadCount;
     }
     function updateDataDay(valueNumber) {
-        const dayCurrent = `${new Date().getDay()}`;
+        const dayCurrent = `${new Date().getDate()}`;
         const monthCurrent = `${new Date().getMonth()}`;
         const timeCurrent = `${dayCurrent} | ${monthCurrent}`;
         let myDataSessions = {

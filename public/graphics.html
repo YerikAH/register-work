@@ -4,30 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>statistics | register-work</title>
-    <div>
-      <canvas id="testChart"></canvas>
-    </div>
+  </head>
+  <body>
+    <a href="./index.html" class="button-back">
+      <img src="../assets/back.svg" alt="back" />
+    </a>
+    <main class="app-graphics">
+      <div>
+        <h1>sessions</h1>
+        <p>Here you can see all the sessions per day that you registered.</p>
+        <canvas id="testChart" width="500" height="500"></canvas>
+      </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+      Chart.defaults.backgroundColor = "#151515";
+      Chart.defaults.borderColor = "#434343";
+      Chart.defaults.color = "#FFFFFF";
+      let data = {
+        labels: [],
+        datasets: [
+          {
+            label: "# of sessions",
+            data: [],
+            borderWidth: 1,
+            borderColor: "#1f6feb",
+            backgroundColor: "#1f71eb9d",
+          },
+        ],
+      };
+      const getDataLocal = localStorage.getItem("SESSION-DAY");
+      if (typeof getDataLocal === "string") {
+        let convertData = JSON.parse(getDataLocal);
+        convertData.forEach((element) => {
+          const labelElement = element.dayPast;
+          const dataElement = element.sessionsPast;
+          const dayConvert = labelElement.slice(0, 2).trim();
+          const mounthConvert =
+            parseInt(labelElement.slice(4, labelElement.length)) + 1;
+          const dataFull = `${dayConvert} / ${mounthConvert}`;
+
+          const getSessions = parseInt(dataElement);
+
+          data.labels.push(dataFull);
+          data.datasets[0].data.push(getSessions);
+        });
+      }
       const ctx = document.getElementById("testChart");
 
       new Chart(ctx, {
         type: "line",
-        data: {
-          labels: ["text1", "text2", "text3", "text4", "text5", "text6"],
-          datasets: [
-            {
-              label: "# of Votes",
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1,
-            },
-          ],
-        },
+        data: data,
         options: {
+          plugins: {
+            legend: {
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  size: 12,
+                  family: "Source Code Pro",
+                },
+              },
+            },
+          },
           scales: {
+            x: {
+              grid: {
+                color: "#434343",
+                borderColor: "#434343",
+                tickColor: "#434343",
+              },
+            },
             y: {
               beginAtZero: true,
             },
@@ -35,6 +86,5 @@
         },
       });
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

@@ -1,0 +1,54 @@
+.app-graphics {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: var(--bg-color);
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+}
+.app-graphics div {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+.app-graphics canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+.app-graphics h1 {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-align: start;
+}
+.app-graphics p {
+  color: var(--white);
+  opacity: 0.7;
+  margin-bottom: 4rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+@media (min-width: 720px) {
+  .app-graphics h1 {
+    font-size: 1.5rem;
+  }
+  .app-graphics p {
+    font-size: 1rem;
+  }
+}
+.button-back {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: var(--blue);
+  border-radius: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
+  right: 0;
+}
