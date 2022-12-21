@@ -11,7 +11,7 @@ import getWork from "./getWork.js";
 import deleteWork from "./deleteWork.js";
 import closeModal from "./closeModal.js";
 import validateHtmlInput from "./validateHtmlInput.js";
-import startTime from "./startTime.js";
+import startTime from "./StartTime.js";
 import newDay from "./newDay.js";
 const d = document;
 // switchModal.ts
@@ -28,12 +28,12 @@ const $minuteInput = d.getElementById("minuteInput");
 const $secondInput = d.getElementById("secondInput");
 const $timeHoursInput = d.getElementById("timeHoursInput");
 const dataAddWorkArg = {
-    newWork: $newWorkTask,
-    nameWork: $nameWork,
-    timeHours: $timeHoursInput,
-    hour: $hourInput,
-    minute: $minuteInput,
-    second: $secondInput,
+  newWork: $newWorkTask,
+  nameWork: $nameWork,
+  timeHours: $timeHoursInput,
+  hour: $hourInput,
+  minute: $minuteInput,
+  second: $secondInput,
 };
 // validateHtmlInput.ts
 const $messageAddWork = d.getElementById("messageAddWork");
@@ -58,22 +58,20 @@ closeModal($modal);
 startTime();
 /* Load info */
 document.addEventListener("DOMContentLoaded", (e) => {
-    const loadInfo = localStorage.getItem(WorkSave);
-    const loadSessions = localStorage.getItem(SessionWork);
-    const loadDoor = localStorage.getItem(ModalDoor);
-    if (typeof loadInfo === "string") {
-        getWork();
-    }
-    else {
-        localStorage.setItem(WorkSave, "[]");
-    }
-    if (typeof loadSessions === "string") {
-        $countSessions.textContent = loadSessions;
-    }
-    else {
-        localStorage.setItem(SessionWork, "0");
-    }
-    if (typeof loadDoor === "string") {
-        localStorage.removeItem(ModalDoor);
-    }
+  const loadInfo = localStorage.getItem(WorkSave);
+  const loadSessions = localStorage.getItem(SessionWork);
+  const loadDoor = localStorage.getItem(ModalDoor);
+  if (typeof loadInfo === "string") {
+    getWork();
+  } else {
+    localStorage.setItem(WorkSave, "[]");
+  }
+  if (typeof loadSessions === "string") {
+    $countSessions.textContent = loadSessions;
+  } else {
+    localStorage.setItem(SessionWork, "0");
+  }
+  if (typeof loadDoor === "string") {
+    localStorage.removeItem(ModalDoor);
+  }
 });
