@@ -11,7 +11,7 @@ import getWork from "./getWork.js";
 import deleteWork from "./deleteWork.js";
 import closeModal from "./closeModal.js";
 import validateHtmlInput from "./validateHtmlInput.js";
-import startTime from "./startTime.js";
+import startTime from "./StartTime.js";
 import newDay from "./newDay.js";
 const d = document;
 // switchModal.ts
